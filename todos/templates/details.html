@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1> Update?</h1>
+
+<form action="{% url 'todos:details' id=todos.id%}" method = "POST">
+        {% csrf_token %}
+
+ 		{{ form.as_p }}
+        <input type="submit" value="Update" />
+    </form>
+
+
+    <form action="{% url 'todos:delete' id=todos.id%}" method="POST">
+        {% csrf_token %}
+
+
+        <input type="submit" value="Delete">
+    </form>
+
+</body>
+</html>

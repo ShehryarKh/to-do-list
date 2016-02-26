@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	{% for todo in todos %}
+		<div>
+			<h2><a href="/todos/details/{{ todo.id }}">{{todo.title}}</h2></a>
+			<p>{{todo.content}}</p>
+		</div>
+
+	{% empty %}
+
+
+
+	<!-- <form action="{% url 'todos:create' %}">
+		{% csrf_token %}
+		{{create_form}}
+		<input type="submit" value="BOOM">
+	</form> -->
+
+	{% endfor %}
+
+
+<h5><a type="button"href="{% url 'todos:create' %}"><button type="button">create</h2></a>
+	
+</body>
+</html>
