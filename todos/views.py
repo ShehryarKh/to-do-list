@@ -51,6 +51,7 @@ def details(request,id):
 
 
 def delete(request,id):
+	
 	if request.method =="POST":
 		task = get_object_or_404(Todo,pk=id)
 		task.delete()

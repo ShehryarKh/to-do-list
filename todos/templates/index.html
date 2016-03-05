@@ -1,31 +1,41 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation-flex.min.css">
+
+<link rel="stylesheet" href="{{ STATIC_URL }}/static/todos.css" />
+
 </head>
 <body>
+		
 
 	{% for todo in todos %}
-		<div>
+	<div class="row">
+			<div class = "small-2 large-2 float-center columns">
+
+			
 			<h2><a href="/todos/details/{{ todo.id }}">{{todo.title}}</h2></a>
+			
 			<p>{{todo.content}}</p>
+			
+			</div>
 		</div>
 
 	{% empty %}
-
-
 
 	<!-- <form action="{% url 'todos:create' %}">
 		{% csrf_token %}
 		{{create_form}}
 		<input type="submit" value="BOOM">
 	</form> -->
-
+s
 	{% endfor %}
 
 
-<h5><a type="button"href="{% url 'todos:create' %}"><button type="button">create</h2></a>
+<h5><a href="{% url 'todos:create' %}"><button type="button" class = "small-2 large-2 float-center columns butt">create</h2></a>
 	
 </body>
 </html>
