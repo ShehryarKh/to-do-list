@@ -1,4 +1,4 @@
-from django.db import 
+from django.db import models
 from django.contrib.auth.models import User
 
 
@@ -23,7 +23,7 @@ class UserProfile(models.Model):
 	# link userprofile to a user model
 	user = models.OneToOneField(User)
 
-	website = models.UrlField(black=True)
+	website = models.URLField(blank=True)
 	picture = models.ImageField()
 
 

@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todos',
     'django.contrib.admindocs',
-    'rango'
 ]
 
 MIDDLEWARE_CLASSES = [
